@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    position: relative;
+    background-color: #141321;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    transform: translate(-150px, -100px);
+    background: linear-gradient(90deg, #6e2f6e, #d8c7c7);
+    pointer-events: none;
+}
+
+section::after {
+    content: "";
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    transform: translate(150px, 100px);
+    background: linear-gradient(90deg, #6e2f6e, #d8c7c7);
+    pointer-events: none;
+}
+
+.card-container{
+    perspective: 1000px;
+    width: 380px;
+    height: 250px;
+    position: relative;
+    z-index: 1;
+}
+
+.card-container:hover .card-front {
+    transform: rotateY(180deg)
+}
+
+.card-container:hover .card-back {
+    transform: rotateY(0deg); /* Change this to 0deg to show the back face on hover */
+}
+.card-upper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-container .card-front {
+    background: url('https://images.pexels.com/photos/3125638/pexels-photo-3125638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: visible;
+    z-index: 2;
+    border-radius: 8px;
+    transition: transform 1.5s; /* Add a transition for smooth animation */
+    backface-visibility: hidden;
+}
+
+.card-left-upper {
+    padding-left: 30px;
+}
+
+.card-left-upper span {
+    color: rgb(218, 142, 43);
+    font-weight: 500;
+}
+
+
+.card-left-upper img {
+    width: 65px;
+    height: 38px;
+    margin: 25px 0px -15px 0px;
+    border-radius: 5px;
+}
+
+.card-right-upper img {
+    width: 50px;
+    height: 42px;
+    margin: 25px 30px -15px 0px;
+}
+
+.card-lower {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+
+.card-lower .card-left-lower {
+    margin-left: 18px;
+}
+
+.card-lower .card-left-lower .text {
+    color: antiquewhite;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.card-lower .card-left-lower .card-number {
+    color: antiquewhite;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-lower .card-left-lower .card-holder {
+    color: antiquewhite;
+    font-size: 18px;
+    margin-top: 20px;
+    letter-spacing: 0.1rem;
+    font-weight: 400;
+}
+
+.card-right-lower {
+    padding: 20px 12px 0px 0px;
+}
+
+
+.card-lower .card-right-lower .valid {
+    color: antiquewhite;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+}
+
+.card-lower .card-right-lower .date {
+    color: antiquewhite;
+    text-align: center;
+}
+
+.card-container .card-back {
+    background: url('https://images.pexels.com/photos/3125638/pexels-photo-3125638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: visible;
+    z-index: 1;
+    border-radius: 8px;
+}
+
+.card-back .card-upper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card-back .card-upper .text p {
+    font-size: 0.5rem;
+    text-align: center;
+    margin-top: 10px;
+    color: antiquewhite;
+
+}
+
+.card-back .card-upper .magnetic-strip {
+    background-color: rgb(90, 82, 82);
+    height: 40px;
+    width: 374px;
+    margin-top: 15px;
+    margin-right: 6px;
+}
+
+
+
+.card-back .card-lower .signatue-panel {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: repeating-linear-gradient(rgb(0, 98, 255), rgb(255, 255, 255) 10%, rgb(124, 2, 254) 20%);
+    height: 30px;
+    width: 285px;
+    margin-top: -60px;
+    margin-left: 20px;
+    border-radius: 4px;
+
+}
+
+.card-back .card-lower .signatue-panel h6 {
+    margin: -23px;
+    background-color: antiquewhite;
+    height: 20px;
+    width: 24px;
+    border-radius: 4px;
+}
+
+.card-back .card-lower {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-back .card-lower .text {
+    height: 120px;
+    width: 340px;
+    color: antiquewhite;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 8px;
+    letter-spacing: 1.5px;
+}
+
+.card-back .card-lower .text p {
+    padding-top: 12px;
+
+}
